@@ -7,7 +7,6 @@
   <a href="form_simpan.php">Tambah Data</a><br><br>
   <table border="1" width="100%">
   <tr>
-    <th>Id</th>
     <th>Nama</th>
     <th>No Telepon</th>
     <th>Email</th>
@@ -22,14 +21,13 @@
   </tr>
 
   <?php
-  include "konek.php";
+  include "koneksi.php";
   
   $query = "SELECT * FROM pelapor"; // Query untuk menampilkan semua data siswa
   $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
   
   while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
     echo "<tr>";
-    echo "<td>".$data['id']."</td>";
     echo "<td>".$data['nama']."</td>";
     echo "<td>".$data['no_telp']."</td>";
     echo "<td>".$data['email']."</td>";

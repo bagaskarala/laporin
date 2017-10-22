@@ -1,6 +1,6 @@
 <?php
 // Load file konek.php
-include "konek.php";
+include "koneksi.php";
 // Ambil Data yang Dikirim dari Form
 $nama = $_POST['nama'];
 $no_telp = $_POST['no_telp'];
