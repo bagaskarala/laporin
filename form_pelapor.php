@@ -8,7 +8,7 @@ include "koneksi.php";
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-            <form method="post" action="modules/mod_pelapor/proses_simpan.php" enctype="multipart/form-data">
+            <form method="post" action="" enctype="multipart/form-data">
 
 	<div id="container">
     	<div id="header">
@@ -102,6 +102,7 @@ include "koneksi.php";
                                     </tr>
                                 </table>
                                 </form>
+
                             </div>
                         </div>
                     </td>
@@ -131,9 +132,35 @@ include "koneksi.php";
         </div>
     </div>
 <?php
-    // if($_POST['SIMPAN']){
-        
-    //   include "proses_simpan.php";       
+    if($_POST['SIMPAN']){
+     
+		$nama = $_POST['nama'];
+		$no_telp = $_POST['no_telp'];
+		$email = $_POST['email'];
+		$no_id = $_POST['no_id'];
+		$kab = $_POST['kab'];
+		$kec = $_POST['kec'];
+		$sekolah = $_POST['sekolah'];
+		$jenis_masalah = $_POST['jenis_masalah'];
+		$des_masalah = $_POST['des_masalah'];
+		// $bukti = $_FILES['bukti']['name'];
+		// $tmp = $_FILES['bukti']['tmp_name'];
+		  
+		// Rename nama fotonya dengan menambahkan tanggal dan jam upload
+		// $buktibaru = date('dmYHis').$bukti;
+		// Set path folder tempat menyimpan fotonya
+		// $path = "images/".$buktibaru;
+		// Proses upload
+		// if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
+		  // Proses simpan ke Database
+		  $query = "INSERT INTO pelapor VALUES('".$nama."', '".$no_telp."', '".$email."', '".$no_id."', '".$kab."', '".$kec
+		  ."', '".$sekolah."', '".$jenis_masalah."', '".$des_masalah."')";
+		  $sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
+		  if($sql){ // Cek jika proses simpan ke database sukses atau tidak
+		    // Jika Sukses, Lakukan :
+		    header("location: modules/mod_pelapor/index.php");   
+           }
+       }
 
     //     // $sql = "insert into () values ()";
     //     // mysqli_query($connect,$sql);

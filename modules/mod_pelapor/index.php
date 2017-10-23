@@ -1,10 +1,15 @@
+<?php
+if(isset($_GET['module'])) $mod = $_GET['module'];
+else $mod = '';
+
+?>
 <html>
 <head>
   <title>Aplikasi CRUD Plus Upload Gambar dengan PHP</title>
 </head>
 <body>
   <h1>Data Siswa</h1>
-  <a href="form_simpan.php">Tambah Data</a><br><br>
+  <a href="?module=<?php echo $mod ?>&exe=tambah">Tambah Data</a><br><br>
   <table border="1" width="100%">
   <tr>
     <th>Nama</th>
@@ -36,7 +41,7 @@
     echo "<td>".$data['sekolah']."</td>";
     echo "<td>".$data['jenis_masalah']."</td>";
     echo "<td>".$data['des_masalah']."</td>";
-    echo "<td><img src='images/".$data ['bukti']."' width='100' height='100'></td>";
+    echo "<td><img src='images/bukti/".$data ['bukti']."' width='100' height='100'></td>";
    // echo "<td><a href='form_ubah.php?Nama_Lengkap=".$data['Nama_Lengkap']."'>Ubah</a></td>";
     echo "<td><a href='proses_hapus.php?nama=".$data['nama']."'>Hapus</a></td>";
     echo "</tr>";

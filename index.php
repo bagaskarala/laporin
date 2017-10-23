@@ -24,9 +24,8 @@
         </div>
         
         <div id="menu">
-            <a class="left selected" href="index.html"><img src="images/home.png">Home</a>
-            <a class="right" href="form.html"><img src="images/menu5.png">Setting</a>
-            <a class="right" href="?module=pelapor"><img src="images/menu5.png">Pelapor</a>
+            <a class="left selected" href="?module=pelapor"><img src="images/home.png">Home</a>
+            <a class="right" href="?module=pelapor&exe=tambah"><img src="images/menu5.png">Pelapor</a>
         </div>
 
         <br>

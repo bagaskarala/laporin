@@ -1,5 +1,4 @@
 <?php
-include "koneksi.php";
 $nama = $_POST['nama'];
 $no_telp = $_POST['no_telp'];
 $email = $_POST['email'];
@@ -19,13 +18,13 @@ $des_masalah = $_POST['des_masalah'];
 // Proses upload
 // if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
   // Proses simpan ke Database
-  $query = "INSERT INTO pelapor VALUES('".$nama."', '".$no_telp."', '".$email."', '".$no_id."', '".$kab."', '".$kec
-  ."', '".$sekolah."', '".$jenis_masalah."', '".$des_masalah."')";
+  $query = "INSERT INTO pelapor (nama,no_telp,email,no_id,kab,kec,sekolah,jenis_masalah,des_masalah) VALUES('".$nama."', '".$no_telp."', '".$email."', '".$no_id."', '".$kab."', '".$kec
+  ."', '".$sekolah."', '".$jenis_masalah."', '".$des_masalah."', '')";
   $sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
   if($sql){ // Cek jika proses simpan ke database sukses atau tidak
     // Jika Sukses, Lakukan :
     header("location: modules/mod_pelapor/index.php"); // Redirect ke halaman index.php
-}
+  }
 //   else{
 //     // Jika Gagal, Lakukan :
 //     echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
