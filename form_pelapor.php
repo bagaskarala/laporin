@@ -1,3 +1,6 @@
+<?php
+include "koneksi.php";
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+            <form method="post" action="modules/mod_pelapor/proses_simpan.php" enctype="multipart/form-data">
 
 	<div id="container">
     	<div id="header">
@@ -19,7 +23,6 @@
             <a class="right selected" href="form_pelapor.html"><img src="images/menu5.png">Form Pelaporan</a>
         </div>
         
-        include index.php ; 
         <div id="content">
         	<table border="0" width="100%" cellpadding="0" cellspacing="0">
             	<tr valign="top">
@@ -32,7 +35,7 @@
                                 	<tr>
                                     	<td><b>Nama Lengkap</b><div class="desc">Masukkan nama lengkap</div></td>
                                         <td>:</td>
-                                        <td><input type="text" name="no_id" /></td>
+                                        <td><input type="text" name="nama" /></td>
                                     </tr>
                                     <tr>
                                     	<td><b>No. Telepon</b><div class="desc">Masukkan Nomor Telepon yang Aktif</div></td>
@@ -73,9 +76,9 @@
                                         <td><input type="text" name="sekolah" /></td>
                                     </tr>
                                     <tr>
-                                        <td><b>Jenis Permasalahan</b><div class="desc">Pilih beberapa hobby</div></td>
-                                        <td>name="jenis_masalah"</td>
-                                      <!--  <td><select><option>Pilih Salah Satu</option><option>Perundungan (Bullying)</option><option>Pungutan Liar</option><option>Infrastruktur</option><option>Lain-Lain</option></select></td> -->
+                                        <td><b>Jenis Permasalahan</b><div class="desc">Masukan Jenis Permasalahan</div></td>
+                                        <td>:</td>
+                                        <td><input type="text" name="jenis_masalah" /></td>
                                     </tr>
                                     <tr>
                                         <td><b>Deskripsi Permasalahan</b><div class="desc">Rincian Permasalahan yang Anda alami</div></td>
@@ -94,7 +97,8 @@
                                     <tr>
                                     	<td>&nbsp;</td>
                                         <td>&nbsp;</td>
-                                        <td><input type="submit" value="Simpan" /><a class="orange" href="#"><img src="images/button-cancel.png">Batal</a></td>
+                                        <td><input type="submit" name="SIMPAN" value="Simpan" /><a class="orange" href="#"><img src="images/button-cancel.png">Batal</a></td>
+
                                     </tr>
                                 </table>
                                 </form>
@@ -126,6 +130,14 @@
             
         </div>
     </div>
+<?php
+    // if($_POST['SIMPAN']){
+        
+    //   include "proses_simpan.php";       
 
+    //     // $sql = "insert into () values ()";
+    //     // mysqli_query($connect,$sql);
+    // }
+?>
 </body>
 </html>

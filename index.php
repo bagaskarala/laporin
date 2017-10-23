@@ -1,48 +1,45 @@
+<?php
+    include "koneksi.php";
+?>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Aplikasi CRUD Plus Upload Gambar dengan PHP</title>
+	<title>Headmaster Admin of LAPORIN</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Data Siswa</h1>
-  <a href="form_simpan.php">Tambah Data</a><br><br>
-  <table border="1" width="100%">
-  <tr>
-    <th>Nama</th>
-    <th>No Telepon</th>
-    <th>Email</th>
-    <th>No Identitas</th>
-    <th>Kabupaten</th>
-    <th>Kecamatan</th>
-    <th>Sekolah</th>
-    <th>Jenis Permasalahan</th>
-    <th>Deskripsi  Permasalahan</th>
-    <th>Bukti</th>
-    <th colspan="2">Aksi</th>
-  </tr>
 
-  <?php
-  include "koneksi.php";
-  
-  $query = "SELECT * FROM pelapor"; // Query untuk menampilkan semua data siswa
-  $sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
-  
-  while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
-    echo "<tr>";
-    echo "<td>".$data['nama']."</td>";
-    echo "<td>".$data['no_telp']."</td>";
-    echo "<td>".$data['email']."</td>";
-    echo "<td>".$data['no_id']."</td>";
-    echo "<td>".$data['kab']."</td>";
-    echo "<td>".$data['kec']."</td>";
-    echo "<td>".$data['sekolah']."</td>";
-    echo "<td>".$data['jenis_masalah']."</td>";
-    echo "<td>".$data['des_masalah']."</td>";
-    echo "<td><img src='images/".$data ['bukti']."' width='100' height='100'></td>";
-   // echo "<td><a href='form_ubah.php?Nama_Lengkap=".$data['Nama_Lengkap']."'>Ubah</a></td>";
-    echo "<td><a href='proses_hapus.php?nama=".$data['nama']."'>Hapus</a></td>";
-    echo "</tr>";
-  }
-  ?>
-  </table>
+	<div id="container">
+    	<div id="header">
+        	<div id="logo">
+            	<img src="images/logo.png">
+            </div>
+            <div id="info">
+            	<img src="images/user.png">
+                Selamat Datang Admin!<br>
+                Anda Mendapat <a href="#">8</a> Pesan Baru<br>
+                <a href="#">Keluar</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div id="menu">
+            <a class="left selected" href="index.html"><img src="images/home.png">Home</a>
+            <a class="right" href="form.html"><img src="images/menu5.png">Setting</a>
+            <a class="right" href="?module=pelapor"><img src="images/menu5.png">Pelapor</a>
+        </div>
+
+        <br>
+        <br>
+        <div>
+            <?php include "module.php"; ?>
+        </div>
+        
+        <div id="footer">
+            Copyright &copy; 2017 | Kerja Praktik PT Air Media<br>
+            
+        </div>
+    </div>
+
 </body>
 </html>
