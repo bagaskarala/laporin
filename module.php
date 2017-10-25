@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['user_id'])
+if (isset($_SESSION['laporin']['username']))
 	{
     if(isset($_GET['module'])){
         if($_GET['module']=='pelapor') {

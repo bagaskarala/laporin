@@ -1,6 +1,16 @@
 <?php
     include "koneksi.php";
+    if(!isset($_SESSION['laporin']['username'])){
+    ?>
+    <script>
+    alert ('anda harus login dahulu');
+    window.location="index_login.php";
+    </script>
+    <?php
+}
+
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
