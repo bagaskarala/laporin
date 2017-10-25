@@ -1,8 +1,4 @@
 <?php
-// Load file koneksi.php
-include "koneksi.php";
-
-// Ambil data NIS yang dikirim oleh index.php melalui URL
 $nama = $_GET['nama'];
 
 // Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
@@ -19,8 +15,12 @@ $query2 = "DELETE FROM pelapor WHERE nama='".$nama."'";
 $sql2 = mysqli_query($connect, $query2); // Eksekusi/Jalankan query dari variabel $query
 
 if($sql2){ // Cek jika proses simpan ke database sukses atau tidak
-	// Jika Sukses, Lakukan :
-	header("location: index.php"); // Redirect ke halaman index.php
+	?>
+         <script>
+        alert('Data berhasil dihapus !');
+        window.location = "?module=pelapor";
+      </script> 
+      <?php
 }else{
 	// Jika Gagal, Lakukan :
 	echo "Data gagal dihapus. <a href='index.php'>Kembali</a>";

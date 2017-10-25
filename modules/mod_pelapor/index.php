@@ -42,8 +42,8 @@ else $mod = '';
     echo "<td>".$data['jenis_masalah']."</td>";
     echo "<td>".$data['des_masalah']."</td>";
     echo "<td><img src='images/bukti/".$data ['bukti']."' width='100' height='100'></td>";
-   // echo "<td><a href='form_ubah.php?Nama_Lengkap=".$data['Nama_Lengkap']."'>Ubah</a></td>";
-    echo "<td><a href='proses_hapus.php?nama=".$data['nama']."'>Hapus</a></td>";
+    echo "<td><a href='?module=".$mod."&exe=ubah&nama=".$data['nama']."'>Ubah</a></td>";
+    echo "<td><a href='?module=".$mod."&exe=proses_hapus&nama=".$data['nama']."'>Hapus</a></td>";
     echo "</tr>";
   }
   ?>
