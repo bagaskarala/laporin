@@ -12,7 +12,7 @@ else $mod = '';
   <a href="?module=<?php echo $mod ?>&exe=tambah">Tambah Data</a><br><br>
   <table border="1" width="100%">
   <tr>
-    <th>Nama</th>
+    <th>Namasa</th>
     <th>No Telepon</th>
     <th>Email</th>
     <th>No Identitas</th>
