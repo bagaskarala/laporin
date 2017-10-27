@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2017 at 07:52 AM
+-- Generation Time: Oct 27, 2017 at 10:59 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -48,6 +48,7 @@ INSERT INTO `login` (`username`, `password`, `level`) VALUES
 --
 
 CREATE TABLE `pelapor` (
+  `id` int(225) NOT NULL,
   `nama` varchar(25) NOT NULL,
   `no_telp` varchar(25) NOT NULL,
   `email` varchar(25) NOT NULL,
@@ -64,9 +65,28 @@ CREATE TABLE `pelapor` (
 -- Dumping data for table `pelapor`
 --
 
-INSERT INTO `pelapor` (`nama`, `no_telp`, `email`, `no_id`, `kab`, `kec`, `sekolah`, `jenis_masalah`, `des_masalah`, `bukti`) VALUES
-('wison', '09090900', 'franshermawan96@gmail.com', '14/TK42097', 'a', 'a', 'a', 'a', 'a', ''),
-('jassjdklajl', '989089809', 'ljaljsdlk@gmail.com', '809890', '080', '89080', '809', '88', '0989', '26102017064329240_F_152902022_QztERf38ZahgsamiU5PDcP1vnr9SA2NR.jpg');
+INSERT INTO `pelapor` (`id`, `nama`, `no_telp`, `email`, `no_id`, `kab`, `kec`, `sekolah`, `jenis_masalah`, `des_masalah`, `bukti`) VALUES
+(5, 'kok', 'oko', 'ko', 'kok', 'oko', 'kk', 'oko', 'kok', 'kokokon,', '27102017103302015364fc0917e977dfd3c6d0dc277ef5673830b363.jpg');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `pelapor`
+--
+ALTER TABLE `pelapor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `pelapor`
+--
+ALTER TABLE `pelapor`
+  MODIFY `id` int(225) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

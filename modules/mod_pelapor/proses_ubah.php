@@ -16,7 +16,7 @@ $id = $_GET['id'];
 // Cek apakah user ingin mengubah fotonya atau tidak
 if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form ubah, lakukan :
 	// Ambil data foto yang dipilih dari form
-	$foto = $_FILES['bukti']['name'];
+	$bukti = $_FILES['bukti']['name'];
 	$tmp = $_FILES['bukti']['tmp_name'];
 	
 	// Rename nama fotonya dengan menambahkan tanggal dan jam upload
