@@ -8,15 +8,15 @@
 	<?php
 
 	// Ambil data NIS yang dikirim oleh index.php melalui URL
-	$nama = $_GET['nama'];
+	$id = $_GET['id'];
 	
 	// Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
-	$query = "SELECT * FROM pelapor WHERE nama='".$nama."'";
+	$query = "SELECT * FROM pelapor WHERE id='".$id."'";
 	$sql = mysqli_query($connect, $query);  // Eksekusi/Jalankan query dari variabel $query
 	$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 	?>
 	
-	<form method="post" action="?module=<?php echo $_GET['module']; ?>&exe=proses_ubah&nama=<?php echo $nama; ?>" enctype="multipart/form-data">
+	<form method="post" action="?module=<?php echo $_GET['module']; ?>&exe=proses_ubah&id=<?php echo $id; ?>" enctype="multipart/form-data">
 	<table cellpadding="8">
 	<tr>
 		<td>Nama</td>

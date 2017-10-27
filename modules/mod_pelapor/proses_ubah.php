@@ -1,6 +1,6 @@
 <?php
 
-$nama = $_GET['nama'];
+$id = $_GET['id'];
 
 // Ambil Data yang Dikirim dari Form
   $nama = $_POST['nama'];
@@ -28,7 +28,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 	// Proses upload
 	if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
 		// Query untuk menampilkan data siswa berdasarkan NIS yang dikirim
-		$query = "SELECT * FROM pelapor WHERE nama='".$nama."'";
+		$query = "SELECT * FROM pelapor WHERE id='".$id."'";
 		$sql = mysqli_query($connect, $query); // Eksekusi/Jalankan query dari variabel $query
 		$data = mysqli_fetch_array($sql); // Ambil data dari hasil eksekusi $sql
 
@@ -37,7 +37,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 			unlink("images/".$data['bukti']); // Hapus file foto sebelumnya yang ada di folder images
 		
 		// Proses ubah data ke Database
-		$query = "UPDATE pelapor SET nama='".$nama."', no_telp='".$no_telp."', email='".$email."', no_id='".$no_id."', kab='".$kab."', kec='".$kec."', sekolah='".$sekolah."', jenis_masalah='".$jenis_masalah."', des_masalah='".$des_masalah."', bukti='".$buktibaru."' WHERE nama='".$nama."'";
+		$query = "UPDATE pelapor SET nama='".$nama."', no_telp='".$no_telp."', email='".$email."', no_id='".$no_id."', kab='".$kab."', kec='".$kec."', sekolah='".$sekolah."', jenis_masalah='".$jenis_masalah."', des_masalah='".$des_masalah."', bukti='".$buktibaru."' WHERE id='".$id."'";
 		$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 		if($sql){ 
@@ -59,7 +59,7 @@ if(isset($_POST['ubah_foto'])){ // Jika user menceklis checkbox yang ada di form
 	}
 }else{ // Jika user tidak menceklis checkbox yang ada di form ubah, lakukan :
 	// Proses ubah data ke Database
-	$query = "UPDATE pelapor SET nama='".$nama."', no_telp='".$no_telp."', email='".$email."', no_id='".$no_id."', kab='".$kab."', kec='".$kec."', sekolah='".$sekolah."', jenis_masalah='".$jenis_masalah."', des_masalah='".$des_masalah."', bukti='".$buktibaru."' WHERE nama='".$nama."'";
+	$query = "UPDATE pelapor SET nama='".$nama."', no_telp='".$no_telp."', email='".$email."', no_id='".$no_id."', kab='".$kab."', kec='".$kec."', sekolah='".$sekolah."', jenis_masalah='".$jenis_masalah."', des_masalah='".$des_masalah."', bukti='".$buktibaru."' WHERE id='".$id."'";
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 	if($sql){

@@ -12,6 +12,7 @@ else $mod = '';
   <a href="?module=<?php echo $mod ?>&exe=tambah">Tambah Data</a><br><br>
   <table border="1" width="100%">
   <tr>
+    <th>Id</th>
     <th>Nama</th>
     <th>No Telepon</th>
     <th>Email</th>
@@ -32,6 +33,7 @@ else $mod = '';
   
   while($data = mysqli_fetch_array($sql)){ // Ambil semua data dari hasil eksekusi $sql
     echo "<tr>";
+    echo "<td>".$data['id']."</td>";
     echo "<td>".$data['nama']."</td>";
     echo "<td>".$data['no_telp']."</td>";
     echo "<td>".$data['email']."</td>";
@@ -42,8 +44,8 @@ else $mod = '';
     echo "<td>".$data['jenis_masalah']."</td>";
     echo "<td>".$data['des_masalah']."</td>";
     echo "<td><img src='images/bukti/".$data ['bukti']."' width='100' height='100'></td>";
-    echo "<td><a href='?module=".$mod."&exe=ubah&nama=".$data['nama']."'>Ubah</a></td>";
-    echo "<td><a href='?module=".$mod."&exe=proses_hapus&nama=".$data['nama']."'>Hapus</a></td>";
+    echo "<td><a href='?module=".$mod."&exe=ubah&id=".$data['id']."'>Ubah</a></td>";
+    echo "<td><a href='?module=".$mod."&exe=proses_hapus&id=".$data['id']."'>Hapus</a></td>";
     echo "</tr>";
   }
   ?>

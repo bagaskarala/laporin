@@ -13,8 +13,4 @@ if (isset($_SESSION['laporin']['username']))
         }
     }
 }
-else {
-	echo "maaf anda tidak berhak membuka ini";
-}
-
 ?>

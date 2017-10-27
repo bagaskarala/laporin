@@ -64,6 +64,7 @@
 </html>
 <?php
 if(isset($_POST['simpan'])){
+  $id= $_POST['id'];
   $nama = $_POST['nama'];
   $no_telp = $_POST['no_telp'];
   $email = $_POST['email'];
