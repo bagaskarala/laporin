@@ -1,11 +1,15 @@
 <?php
-session_start();
-$host = "localhost"; // Nama hostnya
-$username = "root"; // Username
-$password = ""; // Password (Isi jika menggunakan password)
-$database = "laporin"; // Nama databasenya
+if (!isset($_SESSION['laporin'])){
+    session_start();
+}
+$db_host = "localhost";
+$db_user = "root";
+$db_pass = "";
+$db_name = "KP1";
 
-$connect = mysqli_connect($host, $username, $password, $database); // Koneksi ke MySQL
+$koneksi = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
-global $connect;
+if(mysqli_connect_errno()){
+	echo 'Gagal melakukan koneksi ke Database : '.mysqli_connect_error();
+}   
 ?>
